@@ -1,0 +1,141 @@
+meta:
+  title: "world.search(you);"
+  style: tui
+  fps: 24
+  seed: 20161011
+  logline: "A terminal searches for a person; the window answers in her voice."
+  author: "agent-mv-studio demo"
+
+song:
+  audio: audio.wav
+  lrc: lyrics.lrc
+  bpm: auto
+  firstBeat: auto
+  beatsPerBar: 4
+  preroll: 4
+
+palette:
+  preset: tui
+
+sections:
+  - id: A
+    palette: paper
+    shots:
+      - at: { time: -4, why: "silent preroll" }
+        until: { time: 0, why: "music starts" }
+        scene: boot
+        moment: "the shell wakes before the song"
+        band: "off"
+        palette: deep
+        params:
+          cps: 30
+      - at: { time: 0, why: "first downbeat" }
+        until: { time: 4.898, why: "bar 2" }
+        scene: shell
+        moment: "the terminal searches; the window answers"
+        palette: paper
+        lines: [1, 2, 3]
+        params:
+          composer: "are you there?"
+          messages:
+            - { who: you, line: 2 }
+            - { who: me, text: "i am here. i am always here." }
+            - { who: you, line: 3 }
+      - at: { time: 4.898, why: "bar 2" }
+        until: { time: 7.347, why: "bar 3" }
+        scene: page
+        moment: "the app turns into a page of totals"
+        palette: cool
+        lines: 4
+        params:
+          kicker: "FILES / TOTAL"
+          title: "281 files, one you"
+          big: "281"
+          bigLabel: "files shared"
+  - id: B
+    palette: cool
+    shots:
+      - at: { time: 7.347, why: "bar 3" }
+        until: { time: 9.796, why: "bar 4" }
+        scene: diagram
+        moment: "the search becomes a curve"
+        palette: paper
+        lines: 5
+        params:
+          kicker: "TRACE 92.9%"
+          title: "you, as a signal"
+          note: "she answers before the question ends"
+      - at: { time: 9.796, why: "bar 4" }
+        until: { time: 12.245, why: "bar 5" }
+        scene: plate
+        moment: "MEMORY is printed on the whole page"
+        palette: paper
+        lines: 6
+        params:
+          word: "MEMORY"
+          caption: "the query never returns"
+          index: "01 / 04"
+          size: 210
+  - id: C
+    palette: flush
+    shots:
+      - at: { time: 12.245, why: "bar 5" }
+        until: { time: 14.694, why: "bar 6" }
+        scene: error
+        moment: "the app refuses an argument it cannot parse"
+        palette: flush
+        lines: 7
+        params:
+          code: "ERR 07"
+          title: "ILLEGAL ARGUMENTS"
+      - at: { time: 14.694, why: "bar 6" }
+        until: { time: 17.143, why: "bar 7" }
+        scene: shell
+        moment: "the window keeps answering anyway"
+        palette: paper
+        lines: [8]
+      - at: { time: 17.143, why: "bar 7" }
+        until: { time: 19.592, why: "bar 8" }
+        scene: page
+        moment: "the totals turn into a count"
+        palette: cool
+        lines: 9
+        params:
+          kicker: "EXECUTION / RUNS"
+          title: "the loop that keeps her online"
+          big: "281"
+          bigLabel: "executions"
+          active: 3
+  - id: D
+    palette: paper
+    shots:
+      - at: { time: 19.592, why: "bar 8" }
+        until: { time: 22.041, why: "bar 9" }
+        scene: plate
+        moment: "EXECUTION fills the page and is cut off"
+        palette: paper
+        lines: 10
+        params:
+          word: "EXECUTION"
+          caption: "no keyboard can stop it"
+          index: "03 / 04"
+          size: 160
+      - at: { time: 22.041, why: "bar 9" }
+        until: { time: 26.939, why: "bar 11" }
+        scene: outro
+        moment: "the shell exits but the window stays open"
+        palette: deep
+        lines: 11
+        band: "off"
+        params:
+          cps: 22
+      - at: { time: 26.939, why: "bar 11, keyword LOVE" }
+        scene: plate
+        moment: "the last page is the cleanest frame of the film"
+        palette: paper
+        lines: 12
+        params:
+          word: "LOVE"
+          caption: "every frame is a function of song time"
+          index: "00 / 00"
+          size: 240

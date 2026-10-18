@@ -1,0 +1,13 @@
+node_modules/
+dist/
+out/
+examples/*/build/
+examples/*/out/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.mp4
+*.mkv
+!docs/media/*.mp4

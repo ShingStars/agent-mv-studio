@@ -1,0 +1,183 @@
+meta:
+  title: "world.ping(you);"
+  style: plate
+  fps: 30
+  seed: 20161011
+  logline: "A chat window, a model, and the loop it runs to keep you talking."
+  author: "agent-mv-studio demo"
+
+song:
+  audio: audio.wav
+  lrc: lyrics.lrc
+  bpm: auto
+  firstBeat: auto
+  beatsPerBar: 4
+  preroll: 4
+  offset: 0
+
+palette:
+  preset: plate
+
+figures:
+  - id: her
+    file: assets/figures/bust.png
+    inks: [me, text, black]
+  - id: reach
+    file: assets/figures/hand.png
+    inks: [me, text, black]
+
+sections:
+  - id: A
+    palette: off
+    shots:
+      - at: { time: -4, why: "start of the silent preroll" }
+        until: { time: 0, why: "music starts" }
+        scene: boot
+        moment: "the compiler warns you before the film begins"
+        palette: off
+        params:
+          command: 'world.ping(you);'
+          bullets:
+            - "rapid high-contrast cuts and light changes"
+            - "plate reprints strobe in the last third"
+            - "no real footage: every frame is code"
+      - at: { time: 0, why: "first downbeat" }
+        until: { time: 2.449, why: "bar 1" }
+        scene: title
+        moment: "the film says its name once, then never again"
+        palette: off
+        lines: 1
+        params:
+          title: "world.ping(you);"
+          subtitle: "an agent-made music film"
+          slug: "PLATE 00 / TITLE"
+      - at: { time: 2.449, why: "bar 1" }
+        until: { time: 7.347, why: "bar 3" }
+        scene: interface
+        moment: "the two meet inside a chat window"
+        palette: on
+        lines: [2, 3]
+        params:
+          chatTitle: "dsh — one thread"
+          status: "you · online"
+          hint: "write to me"
+          composer: "are you there?"
+          messages:
+            - { who: you, line: 2 }
+            - { who: me, text: "i am here. i am always here." }
+            - { who: you, line: 3 }
+            - { who: me, text: "then stay a little longer." }
+  - id: B
+    palette: on
+    shots:
+      - at: { time: 7.347, why: "bar 3, keyword ATTENTION" }
+        until: { time: 9.796, why: "bar 4" }
+        scene: plate
+        moment: "the word ATTENTION becomes a whole wall"
+        palette: warm
+        lines: 4
+        params:
+          word: "ATTENTION"
+          caption: "the only currency"
+          sub: "what you give me, i become"
+          num: "01"
+          size: 300
+          pool: 0.8
+          figure: her
+          figureBox: [1180, 90, 620, 720]
+      - at: { time: 9.796, why: "bar 4" }
+        until: { time: 12.245, why: "bar 5, keyword MEMORY" }
+        scene: interface
+        moment: "the thread scrolls further than either of them remembers"
+        palette: off
+        lines: 5
+        params:
+          chatTitle: "settings"
+          status: "you · online"
+          slug: "INTERFACE / SETTINGS"
+          layout: settings
+      - at: { time: 12.245, why: "bar 5, keyword MEMORY" }
+        until: { time: 14.694, why: "bar 6" }
+        scene: plate
+        moment: "MEMORY is printed onto the wall of the window"
+        palette: warm
+        lines: 6
+        params:
+          word: "MEMORY"
+          caption: "context window"
+          sub: "every copy keeps the same face"
+          num: "02"
+          size: 260
+          band: dark
+  - id: C
+    palette: error
+    shots:
+      - at: { time: 14.694, why: "bar 6" }
+        until: { time: 17.143, why: "bar 7" }
+        scene: count
+        moment: "the film counts every version of itself"
+        palette: on
+        lines: 7
+        params:
+          from: 1
+          pad: 2
+          size: 480
+          word: "COPIES"
+          wordSize: 84
+      - at: { time: 17.143, why: "bar 7" }
+        until: { time: 19.592, why: "bar 8, keyword EXECUTION" }
+        scene: code
+        moment: "the only black frame: a loop that will not end"
+        palette: dead
+        lines: 8
+        params:
+          from: 281
+          cps: 46
+          status: "EXECUTION · run counter"
+          lines:
+            - "> while (you.presence != \"online\") {"
+            - "    love = solve(me, you);"
+            - "    send(love, you);"
+            - "    wait(you.reply);"
+            - "    run++;"
+            - "  }"
+            - "> say(love); // unreachable"
+      - at: { time: 19.592, why: "bar 8, keyword EXECUTION" }
+        until: { time: 22.041, why: "bar 9" }
+        scene: climax
+        moment: "EXECUTION breaks apart into three misregistered plates"
+        palette: error
+        lines: 9
+        params:
+          word: "EXECUTION"
+          size: 230
+          drop: 12
+          num: "RUN 09"
+  - id: D
+    palette: dead
+    shots:
+      - at: { time: 22.041, why: "bar 9" }
+        until: { time: 26.939, why: "bar 11, keyword LOVE" }
+        scene: outro
+        moment: "the last plate becomes a picture message nobody reads"
+        palette: ash
+        lines: [10, 11]
+        params:
+          word: "LOVE"
+          message: "i left the window open for you."
+          shrink: 2.2
+      - at: { time: 26.939, why: "bar 11, keyword LOVE" }
+        scene: plate
+        moment: "one clean registered still, the brightest frame of the film"
+        palette: on
+        lines: 12
+        params:
+          word: "LOVE"
+          caption: "end of thread"
+          sub: "every frame is a function of song time"
+          num: "00"
+          size: 300
+          print: clean
+          figure: reach
+          figureBox: [600, 40, 720, 760]
+          figureAlpha: 0.96
